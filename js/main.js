@@ -1,4 +1,4 @@
-(function() {
+(function($) {
     window.console.log("running main.js");
 
     var addH1 = function(text) {
@@ -9,3 +9,4 @@
         addH1("Hallo");
     }, 5000);
 })();
+})(jQuery);
