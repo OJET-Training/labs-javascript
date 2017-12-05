@@ -6,7 +6,8 @@
     };
 
     window.setTimeout(function() {
+    $(document).ready(function() {
+        window.console.log("document loaded");
         addH1("Hallo");
-    }, 5000);
-})();
+    });
 })(jQuery);
