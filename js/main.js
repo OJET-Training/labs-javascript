@@ -1,21 +1,14 @@
-(function($) {
-    window.console.log("running main.js");
+requirejs.config({
+    baseUrl: 'js/libs',
+    paths: {
+        jquery: './vendor/jquery-3.2.1',
+        common: './common',
+        app: '../app'
+    }
+});
 
-    var addH1 = function(text) {
-        $("body").append("<h1>" + text + "</h1>");
-    };
-
-    $(document).ready(function() {
-        window.console.log("document loaded");
-        addH1("Hallo");
-        var i = 1;
-        var timer = setInterval(function() {
-            if (i < 10) {
-                addH1("Hallo " + (i++));
-            } else {
-                window.console.log("done");
-                clearInterval(timer);
-            }
-        }, 1000);
+require(['app'], function() {
+    require(['common'], function(common) {
+        common.info('starting application ...');
     });
-})(jQuery);
+});
